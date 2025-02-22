@@ -41,16 +41,16 @@ const NumberMaker = () => {
       </div>
 
       <div className="challenge-area">
-        <h1>암산 최단 기록 챌린지</h1>
-        <button onClick={handleGenerate}>숫자 생성하기</button>
+        {/* <h1>암산 최단 기록 챌린지</h1> */}
+        <button onClick={handleGenerate}>도전하기</button>
         <div className="numbers-display">
           {numbers.num1 && numbers.num2 ? (
             <>
-              <p>숫자 1: {numbers.num1}</p>
-              <p>숫자 2: {numbers.num2}</p>
+              <p className="number-font">{numbers.num1}</p>
+              <p className="number-font">{numbers.num2}</p>
             </>
           ) : (
-            <p>버튼을 눌러서 숫자와 타이머를 시작해보세요!</p>
+            <p>3자리 곱셈 암산을 도전하세요!</p>
           )}
         </div>
         {numbers.num1 && numbers.num2 && (
