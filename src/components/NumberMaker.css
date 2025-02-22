@@ -1,53 +1,223 @@
 .number-maker-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 50px;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+  gap: 40px;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
 .left-box {
-  background-color: #FFE400;
-  padding: 20px;
-  width: 250px;
-  height: 200px;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #FFE400 0%, #FFD000 100%);
+  padding: 30px;
+  width: 300px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
-  
+
+.left-box:hover {
+  transform: translateY(-5px);
+}
+
+.left-box h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+}
+
 .challenge-area {
-  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  min-width: 320px;
+  max-width: 500px;
 }
-  
+
 .challenge-area button {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: #FFD000;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(74, 144, 226, 0.2);
 }
-  
+
+.challenge-area button:hover {
+  background: #e4be00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(74, 144, 226, 0.3);
+}
+
+.challenge-area button:active {
+  transform: translateY(1px);
+}
+
 .numbers-display {
-  margin-top: 20px;
-  font-size: 18px;
-  gap: 10px;
-}
-  
-.answer-section {
-  margin-top: 20px;
-}
-  
-.answer-section input {
-  padding: 8px;
-  font-size: 16px;
-  margin-right: 10px;
-}
-  
-@media (max-width: 500px) {
-  .number-maker-container {
-    flex-direction: column;
-    align-items: center;
-  }
+  margin: 40px 0;
+  padding: 20px;
+  background: #F8F9FA;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
 .number-font {
-  font-size: 30px;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2D3748;
   margin: 0;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  min-width: 180px;
+}
+
+.answer-section {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.answer-section input {
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  border: 2px solid #E2E8F0;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 300px;
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+
+.answer-section input:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.answer-section button {
+  background: #FFD000;
+}
+
+.answer-section button:hover {
+  background: #e4be00;
+}
+
+.answer-section p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 15px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px 0;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .number-maker-container {
+    margin: 20px auto;
+    gap: 30px;
+  }
+
+  .left-box {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .challenge-area {
+    padding: 30px 20px;
+    width: 100%;
+  }
+
+  .number-font {
+    font-size: 2.8rem;
+  }
+}
+
+.answer-section p {
+  background: #F7FAFC;
+  border-left: 4px solid;
+}
+
+.answer-section p:contains("정답") {
+  border-color: #38A169;
+  color: #2F855A;
+}
+
+.answer-section p:contains("오답") {
+  border-color: #E53E3E;
+  color: #C53030;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.buttons-container button {
+  flex: 1;
+  max-width: 200px;
+}
+
+.numbers-display {
+  margin: 40px 0;
+  padding: 20px;
+  background: #F8F9FA;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: monospace;
+}
+
+.multiplication-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.number-line {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #2D3748;
+  line-height: 1;
+  position: relative;
+}
+
+.multiply-sign {
+  margin-right: 10px;
+}
+
+.underline {
+  width: 100%;
+  height: 3px;
+  background-color: #2D3748;
+  margin-top: 5px;
 }

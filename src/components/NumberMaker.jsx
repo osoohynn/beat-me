@@ -41,19 +41,26 @@ const NumberMaker = () => {
       </div>
 
       <div className="challenge-area">
-        {/* <h1>암산 최단 기록 챌린지</h1> */}
-        <button onClick={handleGenerate}>도전하기</button>
+        {!numbers.num1 && (
+          <button onClick={handleGenerate}>도전하기</button>
+        )}
         <div className="numbers-display">
-          {numbers.num1 && numbers.num2 ? (
-            <>
-              <p className="number-font">{numbers.num1}</p>
-              <p className="number-font">{numbers.num2}</p>
-            </>
-          ) : (
+        {numbers.num1 && numbers.num2 && !timerStopped ? (
+            <div className="multiplication-layout">
+            <div className="number-line">
+                {numbers.num1}
+            </div>
+            <div className="number-line">
+                <span className="multiply-sign">x</span>
+                {numbers.num2}
+                </div>
+            <div className="underline"></div>
+            </div>
+        ) : !numbers.num1 ? (
             <p>3자리 곱셈 암산을 도전하세요!</p>
-          )}
+        ) : <p>{numbers.num1}X{numbers.num2}?</p>}
         </div>
-        {numbers.num1 && numbers.num2 && (
+        {numbers.num1 && numbers.num2 && !timerStopped && (
           <Timer
             key={timerResetKey}
             resetSignal={timerResetKey}
@@ -68,7 +75,10 @@ const NumberMaker = () => {
               onChange={(e) => setAnswer(e.target.value)}
               placeholder="답을 입력하세요"
             />
-            <button onClick={handleCheckAnswer}>정답 확인하기</button>
+            <div className="buttons-container">
+              <button onClick={handleCheckAnswer}>정답 확인하기</button>
+              <button onClick={handleGenerate}>다시 도전하기</button>
+            </div>
             {resultMessage && <p>{resultMessage}</p>}
           </div>
         )}
