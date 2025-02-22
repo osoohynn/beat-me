@@ -1,0 +1,48 @@
+.number-maker-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+.left-box {
+  background-color: #FFE400;
+  padding: 20px;
+  width: 250px;
+  height: 200px;
+  border-radius: 8px;
+}
+  
+.challenge-area {
+  text-align: center;
+}
+  
+.challenge-area button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+  
+.numbers-display {
+  margin-top: 20px;
+  font-size: 18px;
+}
+  
+.answer-section {
+  margin-top: 20px;
+}
+  
+.answer-section input {
+  padding: 8px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+  
+@media (max-width: 768px) {
+  .number-maker-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+  
