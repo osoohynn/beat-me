@@ -24,7 +24,7 @@
 
 .left-box h2 {
   font-size: 1.5rem;
-  color: #333;
+  color: #272121;
   margin: 0;
   line-height: 1.4;
 }
@@ -42,8 +42,8 @@
   padding: 15px 30px;
   font-size: 1.1rem;
   font-weight: 600;
-  background: #FFD000;
-  color: white;
+  background: #ffdb3c;
+  color: rgb(35, 32, 29);
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -109,7 +109,7 @@
 }
 
 .answer-section button {
-  background: #FFD000;
+  background: #ffdb3c;
 }
 
 .answer-section button:hover {
