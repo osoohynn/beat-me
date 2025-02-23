@@ -60,7 +60,7 @@ const NumberMaker = () => {
             <p>3자리 곱셈 암산을 도전하세요!</p>
         ) : <p>{numbers.num1}X{numbers.num2}?</p>}
         </div>
-        {numbers.num1 && numbers.num2 && !timerStopped && (
+        {numbers.num1 && numbers.num2 && (
           <Timer
             key={timerResetKey}
             resetSignal={timerResetKey}
